@@ -47,6 +47,9 @@ python data_collection.py
 python train_model.py
 ```
 
+***NOTE***
+The Reference Material is under the 'ASL_HandSigns/' Folder
+
 ## 🧰 Tech Stack
 
 - python 3.11
@@ -68,29 +71,15 @@ A fully-connected neural network trained to classify ASL (American Sign Language
 
 **Model Architecture**: 
 
-Model: "sequential"
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
-┃ Layer (type)                    ┃ Output Shape           ┃       Param # ┃
-┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
-│ dense (Dense)                   │ (None, 128)            │         8,192 │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ batch_normalization             │ (None, 128)            │           512 │
-│ (BatchNormalization)            │                        │               │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ dropout (Dropout)               │ (None, 128)            │             0 │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ dense_1 (Dense)                 │ (None, 64)             │         8,256 │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ batch_normalization_1           │ (None, 64)             │           256 │
-│ (BatchNormalization)            │                        │               │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ dropout_1 (Dropout)             │ (None, 64)             │             0 │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ dense_2 (Dense)                 │ (None, 26)             │         1,690 │
-└─────────────────────────────────┴────────────────────────┴───────────────┘
- Total params: 18,906 (73.85 KB)
- Trainable params: 18,522 (72.35 KB)
- Non-trainable params: 384 (1.50 KB)
+```
+Input Layer (63 features)
+    ↓
+Dense Layer (128 units, ReLU) + Batch Normalization + Dropout (0.3)
+    ↓
+Dense Layer (64 units, ReLU) + Batch Normalization + Dropout (0.3)
+    ↓
+Output Layer (26 classes, Softmax)
+```
 
 ### Performance
 - **Training Accuracy**: 97.8%
