@@ -1,6 +1,5 @@
 import cv2
 import mediapipe as mp
-from sympy.codegen.ast import none
 
 
 class HandDetector:

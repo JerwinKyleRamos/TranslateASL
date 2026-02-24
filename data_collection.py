@@ -100,7 +100,7 @@ for class_name in CLASS_NAMES:
                 break
                 exit()
 
-        print(f"✓ Done collecting {class_name}")
+        print(f" Done collecting {class_name}")
 
 cap.release()
 cv2.destroyAllWindows()
