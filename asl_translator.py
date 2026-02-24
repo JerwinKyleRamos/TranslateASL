@@ -137,13 +137,13 @@ while True:
                             print(f"Pred: {pred_class} ({conf:.2f})")
                             print(f"Top 5: {[(class_names[i], round(smooth_pred[i], 2)) for i in np.argsort(smooth_pred)[-5:][::-1]]}")
 
-            # Display translation
-        h, w, _ = image.shape
-        cv2.rectangle(image, (0, h - 70), (w, h), (0, 0, 0), -1)
-        cv2.putText(image, f"Translation: {translation}", (10, h - 35),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
-        cv2.putText(image, "space: Reset | Q: Quit", (10, h - 5),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (200, 200, 200), 1)
+    # Display translation
+    h, w, _ = image.shape
+    cv2.rectangle(image, (0, h - 70), (w, h), (0, 0, 0), -1)
+    cv2.putText(image, f"Translation: {translation}", (10, h - 35),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
+    cv2.putText(image, "space: Reset | Q: Quit", (10, h - 5),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (200, 200, 200), 1)
 
     cv2.imshow('ASL Translator', image)
     if cv2.waitKey(1) & 0xFF == ord('q'):
