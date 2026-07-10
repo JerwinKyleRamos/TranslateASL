@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/8d523bc5-1794-4374-9db6-41fb4cd5bd71
+
 # TranslateASL
 
 This is a python based project that translates ASL Sign Language into Readable Texts 
