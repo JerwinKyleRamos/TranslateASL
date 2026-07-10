@@ -20,7 +20,7 @@ cd TranslateASL
 
 2. Create a virtual environment (recommended):
 ```bash
-python -m venv venv
+python -3.11 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
